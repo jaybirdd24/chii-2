@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-label="Beauty care placeholder">
+  <rect width="600" height="380" fill="#ffffff"/>
+  <g opacity="0.18" fill="#6b8c7a">
+    <circle cx="160" cy="160" r="90"/>
+    <circle cx="340" cy="230" r="70"/>
+    <circle cx="470" cy="140" r="110"/>
+  </g>
+</svg>
+

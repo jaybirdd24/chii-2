@@ -1,0 +1,346 @@
+@import "tailwindcss";
+
+/* ===== DESIGN SYSTEM: CHII WELLNESS ===== */
+
+:root {
+  /* Primary - Sage Green Spectrum */
+  --sage-50: #F4F6F2;
+  --sage-100: #E8EBE4;
+  --sage-200: #D1D9CA;
+  --sage-300: #B5C4A8;
+  --sage-400: #9CAF88;
+  --sage-500: #87A06F;
+  --sage-600: #6B8E5A;
+  --sage-700: #567548;
+
+  /* Secondary - Cream Spectrum */
+  --cream-50: #FFFDF9;
+  --cream-100: #FFF8F0;
+  --cream-200: #FFF4E9;
+  --cream-300: #F5EBE0;
+  --cream-400: #E7D8C9;
+
+  /* Text Colors */
+  --text-primary: #2D3028;
+  --text-secondary: #5A5D55;
+  --text-muted: #8A8D84;
+
+  /* Functional */
+  --white: #FFFFFF;
+  --border: #E2E5DE;
+  --overlay: rgba(45, 48, 40, 0.6);
+
+  /* Background */
+  --background: var(--cream-100);
+  --foreground: var(--text-primary);
+
+  /* Surface - for cards and elevated content */
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+}
+
+/* ===== DARK MODE ===== */
+.dark {
+  /* Primary - Sage Green Spectrum (muted forest tones) */
+  --sage-50: #1e2420;
+  --sage-100: #2a322c;
+  --sage-200: #374239;
+  --sage-300: #475747;
+  --sage-400: #5a6d58;
+  --sage-500: #7a9a6a;
+  --sage-600: #94b084;
+  --sage-700: #aec4a0;
+
+  /* Secondary - Cream Spectrum (warm muted tones) */
+  --cream-50: #1f1d1a;
+  --cream-100: #2a2724;
+  --cream-200: #36322e;
+  --cream-300: #443f3a;
+  --cream-400: #524c45;
+
+  /* Text Colors (soft warm tones) */
+  --text-primary: #ebe8e4;
+  --text-secondary: #a5a19a;
+  --text-muted: #706c66;
+
+  /* Functional */
+  --white: #2a2724;
+  --border: #3d3935;
+  --overlay: rgba(0, 0, 0, 0.7);
+
+  /* Background - soft charcoal with warmth */
+  --background: #1a1816;
+  --foreground: #ebe8e4;
+
+  /* Surface - cards with gentle elevation */
+  --surface: #242220;
+  --surface-elevated: #2e2b28;
+}
+
+@theme inline {
+  /* Colors */
+  --color-sage-50: var(--sage-50);
+  --color-sage-100: var(--sage-100);
+  --color-sage-200: var(--sage-200);
+  --color-sage-300: var(--sage-300);
+  --color-sage-400: var(--sage-400);
+  --color-sage-500: var(--sage-500);
+  --color-sage-600: var(--sage-600);
+  --color-sage-700: var(--sage-700);
+
+  --color-cream-50: var(--cream-50);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-cream-300: var(--cream-300);
+  --color-cream-400: var(--cream-400);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border: var(--border);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Surface colors for cards */
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+
+  /* Fonts */
+  --font-heading: var(--font-cormorant);
+  --font-body: var(--font-dm-sans);
+
+  /* Custom spacing */
+  --spacing-section: 6rem;
+  --spacing-section-lg: 8rem;
+}
+
+/* Base Styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Typography Utilities */
+.font-heading {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.font-body {
+  font-family: var(--font-body), -apple-system, sans-serif;
+}
+
+/* Smooth Scrolling — handled by Lenis */
+
+/* Selection Color */
+::selection {
+  background-color: var(--sage-200);
+  color: var(--text-primary);
+}
+
+/* Focus Styles for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--sage-400);
+  outline-offset: 2px;
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Transition Utilities */
+.transition-premium {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme Transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== VIEW TRANSITIONS (page navigation) ===== */
+::view-transition-old(root) {
+  animation: 280ms ease-out both vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 280ms ease-out both vt-fade-in;
+}
+
+@keyframes vt-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SERVICE ICON MICRO-INTERACTIONS ===== */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.service-icon {
+  animation: gentleFloat 3s ease-in-out infinite;
+  transition: filter 0.3s ease;
+}
+
+.group:hover .service-icon {
+  animation: iconPulse 0.6s ease-in-out;
+  filter: drop-shadow(0 0 8px var(--sage-300));
+}
+
+/* ===== CUSTOM CURSOR (desktop only) ===== */
+/* Class added by CustomCursor.tsx when JS initialises successfully */
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* ===== NAV LINK UNDERLINE ===== */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--sage-500);
+  transition: width 0.3s ease-out;
+}
+
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+
+/* ===== BUTTON FILL HOVER ===== */
+.btn-fill-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-fill-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sage-700);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.btn-fill-hover:hover::before {
+  transform: scaleX(1);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-down {
+    animation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+
+  .service-icon {
+    animation: none;
+  }
+
+  .group:hover .service-icon {
+    animation: none;
+    filter: none;
+  }
+
+  .nav-link-underline::after {
+    transition: none;
+  }
+
+  .btn-fill-hover::before {
+    transition: none;
+  }
+
+  .custom-cursor-active * {
+    cursor: auto !important;
+  }
+}

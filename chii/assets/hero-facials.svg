@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" role="img" aria-label="Facials and eyecare themed abstract">
+  <rect width="1600" height="520" fill="#f2eee9"/>
+  <g opacity="0.15">
+    <circle cx="300" cy="200" r="130" fill="#6b8c7a"/>
+    <circle cx="760" cy="360" r="90" fill="#6b8c7a"/>
+    <circle cx="1220" cy="220" r="150" fill="#6b8c7a"/>
+  </g>
+</svg>
+

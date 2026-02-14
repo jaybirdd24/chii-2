@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-label="Waxing placeholder">
+  <rect width="600" height="380" fill="#ffffff"/>
+  <g opacity="0.2" stroke="#6b8c7a" stroke-width="10" fill="none">
+    <path d="M100 260 C 160 200, 240 320, 300 260"/>
+    <path d="M320 260 C 380 200, 460 320, 520 260"/>
+  </g>
+</svg>
+

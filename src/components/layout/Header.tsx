@@ -1,0 +1,96 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+import { Menu, Phone } from "lucide-react";
+import { siteContent } from "@/lib/content";
+import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/shared/Logo";
+import { Navigation } from "./Navigation";
+import { MobileMenu } from "./MobileMenu";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+
+export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  return (
+    <>
+      {/* Skip to main content link */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-sage-500 focus:text-white focus:rounded-md"
+      >
+        Skip to main content
+      </a>
+
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-30 transition-all duration-300",
+          isScrolled
+            ? "bg-cream-50/95 backdrop-blur-sm shadow-sm py-3"
+            : "bg-transparent py-5"
+        )}
+      >
+        <Container>
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Logo />
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-2">
+              <Navigation />
+              <a
+                href={siteContent.contact.phoneLink}
+                className="inline-flex items-center gap-2 ml-4 px-4 py-2 text-sm font-medium rounded-md bg-sage-500 text-white hover:bg-sage-600 transition-colors btn-fill-hover relative overflow-hidden"
+              >
+                <Phone className="w-4 h-4 relative z-10" />
+                <span className="relative z-10">Call Us</span>
+              </a>
+              <ThemeToggle />
+            </div>
+
+            {/* Mobile: Theme Toggle + Menu Button */}
+            <div className="flex lg:hidden items-center gap-1">
+              <ThemeToggle />
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="p-2.5 text-text-secondary hover:text-text-primary transition-colors"
+                aria-label="Open menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        </Container>
+      </header>
+
+      {/* Mobile Menu */}
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
+    </>
+  );
+}

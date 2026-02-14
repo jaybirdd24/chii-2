@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-label="Herbal medicine placeholder">
+  <rect width="600" height="380" fill="#ffffff"/>
+  <g fill="#6b8c7a" opacity="0.25">
+    <rect x="240" y="120" width="120" height="140" rx="12"/>
+    <circle cx="300" cy="100" r="30"/>
+  </g>
+</svg>
+

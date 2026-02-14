@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-label="Fertility support placeholder">
+  <rect width="600" height="380" fill="#ffffff"/>
+  <g opacity="0.18" fill="#6b8c7a">
+    <circle cx="280" cy="200" r="70"/>
+    <circle cx="330" cy="200" r="70"/>
+  </g>
+</svg>
+

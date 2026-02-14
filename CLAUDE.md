@@ -2,10 +2,6 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
-
-Chii Wellness website - a Next.js 16 site for a wellness clinic in Auckland, NZ. The main application code is in `/chii-wellness/`.
-
 ## Commands
 
 All commands run from `/chii-wellness/`:
@@ -54,6 +50,3 @@ Colors defined as CSS variables in `globals.css`:
 Typography:
 - Headings: Cormorant Garamond (`font-heading` class)
 - Body: DM Sans (`font-body` class)
-
-### Agent System
-The `/.claude/agents/` folder contains 8 specialized agent configurations for the development workflow. See `/.claude/agents/README.md` for the delegation pattern and workflow order.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" role="img" aria-label="Acupuncture themed abstract">
+  <rect width="1600" height="520" fill="#eef0eb"/>
+  <g stroke="#6b8c7a" stroke-width="2" opacity="0.5">
+    <line x1="200" y1="40" x2="220" y2="480"/>
+    <line x1="240" y1="60" x2="260" y2="500"/>
+    <line x1="280" y1="80" x2="300" y2="460"/>
+    <line x1="320" y1="50" x2="340" y2="490"/>
+    <line x1="360" y1="70" x2="380" y2="470"/>
+  </g>
+</svg>
+

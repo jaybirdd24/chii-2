@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-label="Physiotherapy placeholder">
+  <rect width="600" height="380" fill="#ffffff"/>
+  <g opacity="0.18" fill="#6b8c7a">
+    <rect x="120" y="240" width="360" height="24" rx="12"/>
+    <rect x="160" y="200" width="280" height="20" rx="10"/>
+    <rect x="200" y="160" width="200" height="16" rx="8"/>
+  </g>
+</svg>
+
