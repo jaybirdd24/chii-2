@@ -9,7 +9,12 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   const prefersReduced = useReducedMotion();
 
   useEffect(() => {
-    if (prefersReduced) {
+    // iOS/Android already have native momentum scrolling. Lenis intercepts
+    // touchstart/touchmove and calls preventDefault(), which prevents touch
+    // events from converting to click events — breaking all buttons on iOS.
+    const isTouchDevice = window.matchMedia("(any-pointer: coarse)").matches;
+
+    if (prefersReduced || isTouchDevice) {
       ScrollTrigger.refresh();
       return;
     }

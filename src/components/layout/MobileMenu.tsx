@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { TransitionLink as Link } from "@/components/ui/TransitionLink";
 import { usePathname } from "next/navigation";
-import { X, ChevronDown, Phone } from "lucide-react";
+import { X, ChevronDown, Phone, CalendarDays } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { navigation, siteContent } from "@/lib/content";
 import { Logo } from "@/components/shared/Logo";
@@ -101,7 +101,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         className={cn(
           "fixed top-0 right-0 h-full w-full max-w-sm bg-cream-50 z-50 lg:hidden",
           "transform transition-transform duration-300 ease-out",
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
         )}
       >
         {/* Header */}
@@ -119,14 +119,26 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         {/* Navigation */}
         <nav className="p-4">
-          {/* Call Us CTA */}
-          <a
-            href={siteContent.contact.phoneLink}
-            className="flex items-center justify-center gap-2 mx-2 sm:mx-4 mb-4 px-4 py-3 rounded-md bg-sage-500 text-white font-medium hover:bg-sage-600 transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            Call Us — {siteContent.contact.phone}
-          </a>
+          {/* Primary CTAs */}
+          <div className="flex flex-col gap-2 mb-4">
+            <a
+              href="https://cal.com/sam-yuan-chii"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-sage-600 text-white font-medium hover:bg-sage-700 transition-colors"
+            >
+              <CalendarDays className="w-4 h-4" />
+              Book Online
+            </a>
+            <a
+              href={siteContent.contact.phoneLink}
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-md border border-sage-300 text-sage-700 font-medium hover:bg-sage-50 transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              Call Us — {siteContent.contact.phone}
+            </a>
+          </div>
 
           {navigation.map((item) => (
             <div key={item.name} className="border-b border-border last:border-0">

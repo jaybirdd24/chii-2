@@ -123,6 +123,17 @@ body {
   font-family: var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* iOS Safari requires cursor:pointer to register buttons as tappable.
+   Tailwind v4 removed this from preflight (v3 had it), so we add it back. */
+button, [role="button"] {
+  cursor: pointer;
+}
+
+/* Eliminate 300ms tap delay on iOS for all interactive elements */
+a, button, [role="button"], input, select, textarea {
+  touch-action: manipulation;
+}
+
 /* Typography Utilities */
 .font-heading {
   font-family: var(--font-heading), Georgia, serif;

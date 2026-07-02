@@ -14,9 +14,15 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light";
-  const stored = localStorage.getItem("theme") as Theme | null;
-  if (stored) return stored;
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+
+  try {
+    const stored = localStorage.getItem("theme") as Theme | null;
+    if (stored === "light" || stored === "dark") return stored;
+  } catch {
+    // Storage may be unavailable in some mobile/private browser modes.
+  }
+
+  if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) return "dark";
   return "light";
 }
 
@@ -44,7 +50,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       root.classList.remove("dark");
     }
-    localStorage.setItem("theme", theme);
+
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {
+      // Theme switching should still work for this page view without storage.
+    }
   }, [theme]);
 
   const setTheme = (newTheme: Theme) => {

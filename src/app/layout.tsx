@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import { ClientDecorations } from "@/components/ui/ClientDecorations";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -21,6 +20,12 @@ const dmSans = DM_Sans({
   weight: ["400", "500"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chii.co.nz"),
@@ -69,9 +74,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
+                try {
+                  const theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (_) {
                 }
               })();
             `,
@@ -82,12 +90,10 @@ export default function RootLayout({
         className={`${cormorant.variable} ${dmSans.variable} antialiased`}
       >
         <ThemeProvider>
-          <SmoothScrollProvider>
             <Header />
             {children}
             <Footer />
             <ClientDecorations />
-          </SmoothScrollProvider>
         </ThemeProvider>
         <Analytics />
       </body>

@@ -10,7 +10,7 @@ export function Footer() {
   const { contact, footer } = siteContent;
 
   return (
-    <footer className="bg-sage-600 text-cream-50">
+    <footer className="text-cream-50" style={{ background: "#2D3028" }}>
       <Container className="py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-sage-500">
+        <div className="mt-12 pt-8 border-t" style={{ borderColor: "#41443B" }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-cream-300 text-sm">
               &copy; {new Date().getFullYear()} Chii Wellness. All rights

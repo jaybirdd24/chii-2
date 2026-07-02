@@ -1,14 +1,11 @@
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GSAPAnimateOnScroll } from "@/components/ui/GSAPAnimateOnScroll";
 import { GSAPStaggerGrid } from "@/components/ui/GSAPStaggerGrid";
 import { CalBookingButton } from "@/components/booking/CalBookingButton";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Phone } from "lucide-react";
 import type { Service } from "@/lib/services";
 import { siteContent } from "@/lib/content";
-
-const bookingEnabled = process.env.NEXT_PUBLIC_ENABLE_BOOKING === "true";
 
 interface ServiceDetailProps {
   service: Service;
@@ -127,9 +124,15 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
 
             <GSAPAnimateOnScroll delay={200}>
               <div className="mt-8 text-center">
-                {bookingEnabled ? (
+                {service.calLinks && service.calLinks.length > 0 ? (
                   <>
-                    <CalBookingButton size="lg" />
+                    <div className="flex gap-3 flex-wrap justify-center">
+                      {service.calLinks.map((link) => (
+                        <CalBookingButton key={link.slug} calLink={link.slug} size="lg">
+                          {link.label}
+                        </CalBookingButton>
+                      ))}
+                    </div>
                     <p className="mt-3 text-text-muted text-sm">
                       or call{" "}
                       <a
@@ -141,9 +144,13 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                     </p>
                   </>
                 ) : (
-                  <Button href={siteContent.contact.phoneLink} size="lg">
-                    Call to Book
-                  </Button>
+                  <a
+                    href={siteContent.contact.phoneLink}
+                    className="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium rounded-md bg-sage-500 text-white hover:bg-sage-600 transition-all hover:-translate-y-0.5"
+                  >
+                    <Phone className="w-5 h-5" />
+                    Call to book · {siteContent.contact.phone}
+                  </a>
                 )}
               </div>
             </GSAPAnimateOnScroll>
@@ -162,9 +169,15 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
               Take the first step towards better wellness. Contact us today to
               schedule your {service.title.toLowerCase()} appointment.
             </p>
-            {bookingEnabled ? (
+            {service.calLinks && service.calLinks.length > 0 ? (
               <>
-                <CalBookingButton size="lg" />
+                <div className="flex gap-3 flex-wrap justify-center">
+                  {service.calLinks.map((link) => (
+                    <CalBookingButton key={link.slug} calLink={link.slug} size="lg">
+                      {link.label}
+                    </CalBookingButton>
+                  ))}
+                </div>
                 <p className="mt-3 text-text-muted text-sm">
                   or call{" "}
                   <a
@@ -176,9 +189,13 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                 </p>
               </>
             ) : (
-              <Button href="/contact" size="lg">
-                Get in Touch
-              </Button>
+              <a
+                href={siteContent.contact.phoneLink}
+                className="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium rounded-md bg-sage-500 text-white hover:bg-sage-600 transition-all hover:-translate-y-0.5"
+              >
+                <Phone className="w-5 h-5" />
+                Call to book · {siteContent.contact.phone}
+              </a>
             )}
           </GSAPAnimateOnScroll>
         </Container>

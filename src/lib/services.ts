@@ -5,6 +5,11 @@ export interface PriceItem {
   note?: string;
 }
 
+export interface CalLink {
+  label: string;
+  slug: string;
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -15,6 +20,7 @@ export interface Service {
   pricing: PriceItem[];
   pricingNote?: string;
   image?: string;
+  calLinks?: CalLink[];
 }
 
 export const services: Service[] = [
@@ -65,6 +71,7 @@ export const services: Service[] = [
       { name: "Cupping", price: "$25" },
     ],
     pricingNote: "Herbal medicine, ask for details.",
+    calLinks: [{ label: "Book appointment", slug: "sam-yuan-chii/acupuncture" }],
   },
   {
     slug: "physiotherapy",
@@ -88,6 +95,10 @@ export const services: Service[] = [
     ],
     pricingNote:
       "Bring your ACC claim number and ID so we can confirm cover. We can help arrange new claims when needed.",
+    calLinks: [
+      { label: "Book initial appointment", slug: "sam-yuan-chii/physio-initial" },
+      { label: "Book follow-up", slug: "sam-yuan-chii/physio-follow-up" },
+    ],
   },
   {
     slug: "massage",
@@ -112,6 +123,10 @@ export const services: Service[] = [
       { name: "Reflexology", duration: "60 min", price: "$95" },
     ],
     pricingNote: "Oil massage, extra $10.",
+    calLinks: [
+      { label: "Book massage", slug: "sam-yuan-chii/massage" },
+      { label: "Book reflexology", slug: "sam-yuan-chii/reflexology" },
+    ],
   },
   {
     slug: "waxing",

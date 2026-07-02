@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { AboutPreview } from "@/components/sections/AboutPreview";
-import { ContactInfo } from "@/components/sections/ContactInfo";
+import { BookingCTA } from "@/components/sections/BookingCTA";
 import { Marquee } from "@/components/ui/Marquee";
 
 export const metadata: Metadata = {
@@ -27,11 +27,7 @@ const marqueeItems = [
   "Chinese Medicine",
   "Physiotherapy",
   "Massage",
-  "Waxing",
-  "Facials",
   "Balance",
-  "Wellness",
-  "Healing",
   "Calm",
 ];
 
@@ -96,7 +92,7 @@ export default function HomePage() {
       <ServicesOverview />
       <Marquee items={marqueeItems} />
       <AboutPreview />
-      <ContactInfo variant="compact" />
+      <BookingCTA />
     </main>
   );
 }

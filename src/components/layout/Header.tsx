@@ -63,10 +63,18 @@ export function Header() {
               <Navigation />
               <a
                 href={siteContent.contact.phoneLink}
-                className="inline-flex items-center gap-2 ml-4 px-4 py-2 text-sm font-medium rounded-md bg-sage-500 text-white hover:bg-sage-600 transition-colors btn-fill-hover relative overflow-hidden"
+                className="inline-flex items-center gap-1.5 ml-2 px-4 py-[9px] text-sm font-medium rounded-lg border border-sage-300 text-sage-700 bg-transparent hover:bg-sage-600 hover:text-white hover:border-sage-600 transition-all"
               >
-                <Phone className="w-4 h-4 relative z-10" />
-                <span className="relative z-10">Call Us</span>
+                <Phone className="w-3.5 h-3.5" />
+                {siteContent.contact.phone}
+              </a>
+              <a
+                href="https://cal.com/sam-yuan-chii"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-[18px] py-[10px] text-sm font-medium rounded-lg bg-sage-600 text-white hover:bg-sage-700 transition-all hover:-translate-y-0.5 active:translate-y-0"
+              >
+                Book Online
               </a>
               <ThemeToggle />
             </div>
