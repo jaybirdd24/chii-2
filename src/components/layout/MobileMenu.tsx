@@ -99,7 +99,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         aria-modal="true"
         aria-label="Navigation menu"
         className={cn(
-          "fixed top-0 right-0 h-full w-full max-w-sm bg-cream-50 z-50 lg:hidden",
+          "fixed top-0 right-0 h-full w-[80%] max-w-xs bg-cream-50 z-50 lg:hidden shadow-2xl",
           "transform transition-transform duration-300 ease-out",
           isOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
         )}

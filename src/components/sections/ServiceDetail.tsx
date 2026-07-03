@@ -157,49 +157,6 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
           </div>
         </Container>
       </section>
-
-      {/* CTA */}
-      <section className="py-16 lg:py-24 bg-cream-100 text-center">
-        <Container>
-          <GSAPAnimateOnScroll>
-            <h2 className="font-heading text-3xl md:text-4xl text-text-primary mb-6">
-              Ready to Begin?
-            </h2>
-            <p className="text-text-secondary mb-8 max-w-xl mx-auto">
-              Take the first step towards better wellness. Contact us today to
-              schedule your {service.title.toLowerCase()} appointment.
-            </p>
-            {service.calLinks && service.calLinks.length > 0 ? (
-              <>
-                <div className="flex gap-3 flex-wrap justify-center">
-                  {service.calLinks.map((link) => (
-                    <CalBookingButton key={link.slug} calLink={link.slug} size="lg">
-                      {link.label}
-                    </CalBookingButton>
-                  ))}
-                </div>
-                <p className="mt-3 text-text-muted text-sm">
-                  or call{" "}
-                  <a
-                    href={siteContent.contact.phoneLink}
-                    className="underline hover:text-sage-600 transition-colors"
-                  >
-                    {siteContent.contact.phone}
-                  </a>
-                </p>
-              </>
-            ) : (
-              <a
-                href={siteContent.contact.phoneLink}
-                className="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium rounded-md bg-sage-500 text-white hover:bg-sage-600 transition-all hover:-translate-y-0.5"
-              >
-                <Phone className="w-5 h-5" />
-                Call to book · {siteContent.contact.phone}
-              </a>
-            )}
-          </GSAPAnimateOnScroll>
-        </Container>
-      </section>
     </>
   );
 }
