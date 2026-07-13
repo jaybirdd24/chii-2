@@ -29,7 +29,6 @@ const serviceOptions = [
   "Physiotherapy",
   "Massage",
   "Waxing",
-  "Facials",
   "Not sure yet",
 ];
 

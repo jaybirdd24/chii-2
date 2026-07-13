@@ -34,14 +34,13 @@ export const metadata: Metadata = {
     template: "%s | Chii Wellness",
   },
   description:
-    "Experience holistic wellness at Chii. We offer acupuncture, physiotherapy, massage, waxing, and facials in a calm, welcoming environment.",
+    "Experience holistic wellness at Chii. We offer acupuncture, physiotherapy, massage, and waxing in a calm, welcoming environment.",
   keywords: [
     "wellness clinic",
     "acupuncture",
     "physiotherapy",
     "massage",
     "waxing",
-    "facials",
     "Mount Maunganui",
     "Tauranga",
     "holistic health",
@@ -49,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Chii Wellness | Mount Maunganui Wellness Clinic",
     description:
-      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, waxing, and facials.",
+      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, and waxing.",
     type: "website",
     locale: "en_NZ",
     siteName: "Chii Wellness",
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chii Wellness | Mount Maunganui Wellness Clinic",
     description:
-      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, waxing, and facials.",
+      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, and waxing.",
   },
 };
 

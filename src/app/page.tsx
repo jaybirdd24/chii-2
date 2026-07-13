@@ -37,7 +37,7 @@ function LocalBusinessJsonLd() {
     "@type": "HealthAndBeautyBusiness",
     name: "Chii Wellness",
     description:
-      "Acupuncture, Chinese medicine, physiotherapy, massage, waxing, and facials. Serving Mount Maunganui for over 20 years.",
+      "Acupuncture, Chinese medicine, physiotherapy, massage, and waxing. Serving Mount Maunganui for over 20 years.",
     url: "https://chii.co.nz",
     telephone: "+64275742522",
     address: {
@@ -71,7 +71,6 @@ function LocalBusinessJsonLd() {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Physiotherapy" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Massage" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Waxing" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Facials" } },
       ],
     },
   };

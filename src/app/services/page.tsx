@@ -9,7 +9,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Discover our range of wellness services including acupuncture, physiotherapy, massage, waxing, and facials.",
+    "Discover our range of wellness services including acupuncture, physiotherapy, massage, and waxing.",
   alternates: {
     canonical: "/services",
   },
