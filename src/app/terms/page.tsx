@@ -12,7 +12,7 @@ export default function TermsPage() {
   const { contact } = siteContent;
 
   return (
-    <main id="main" className="pt-32 pb-20 bg-cream-50">
+    <main id="main" className="pt-40 pb-20 bg-cream-50">
       <Container>
         <div className="max-w-3xl mx-auto prose prose-sage">
           <span className="text-sm uppercase tracking-wider text-sage-500 mb-4 block not-prose">

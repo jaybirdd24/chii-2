@@ -4,12 +4,12 @@ import { siteContent } from "@/lib/content";
 import { ArrowRight, Phone } from "lucide-react";
 
 export function Hero() {
-  const { hero, contact } = siteContent;
+  const { booking, hero, contact } = siteContent;
 
   return (
     <HeroAnimated>
       <section
-        className="relative pt-[100px] lg:pt-[148px] pb-[60px] lg:pb-[88px] overflow-hidden"
+        className="relative pt-[132px] lg:pt-[180px] pb-[60px] lg:pb-[88px] overflow-hidden"
         style={{
           background: "linear-gradient(160deg,#FFF8F0 0%,#FFFDF9 45%,#F4F6F2 100%)",
         }}
@@ -59,7 +59,7 @@ export function Hero() {
 
               <div data-gsap-hero-cta className="flex flex-col sm:flex-row gap-3 mb-10">
                 <a
-                  href="https://cal.com/sam-yuan-chii"
+                  href={booking.calUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-[30px] py-[15px] text-[17px] font-medium rounded-[9px] bg-sage-600 text-white hover:bg-sage-700 transition-all hover:-translate-y-0.5 active:translate-y-0"
@@ -108,7 +108,7 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Right column — image placeholder */}
+            {/* Right column */}
             <div className="relative hidden lg:block">
               <div
                 className="w-full rounded-[18px] bg-gradient-to-br from-sage-100 to-sage-200"

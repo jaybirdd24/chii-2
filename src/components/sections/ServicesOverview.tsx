@@ -204,8 +204,7 @@ export function ServicesOverview() {
               </h2>
             </div>
             <p className="max-w-[340px] text-base text-text-secondary leading-relaxed m-0">
-              Book the wellness treatments online in seconds. Beauty services are a quick phone call
-              away.
+              Book treatments online in seconds, then choose the appointment type that fits.
             </p>
           </div>
         </GSAPAnimateOnScroll>
@@ -230,7 +229,7 @@ export function ServicesOverview() {
         <GSAPAnimateOnScroll>
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs uppercase tracking-[0.14em] text-text-muted font-medium whitespace-nowrap">
-              Chinese medicine &amp; beauty · Call to book
+              Chinese medicine &amp; beauty · Book online
             </span>
             <span className="flex-1 h-px bg-border" />
           </div>

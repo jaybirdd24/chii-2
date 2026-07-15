@@ -19,7 +19,7 @@ export default function ServicesPage() {
   return (
     <main id="main">
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-cream-100">
+      <section className="pt-40 pb-16 bg-cream-100">
         <Container>
           <GSAPAnimateOnScroll>
             <span className="text-sm uppercase tracking-wider text-sage-500 mb-4 block">

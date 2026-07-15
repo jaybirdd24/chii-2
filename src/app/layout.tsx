@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MovedBanner } from "@/components/layout/MovedBanner";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ClientDecorations } from "@/components/ui/ClientDecorations";
 import { Analytics } from "@vercel/analytics/next";
@@ -89,6 +90,7 @@ export default function RootLayout({
         className={`${cormorant.variable} ${dmSans.variable} antialiased`}
       >
         <ThemeProvider>
+            <MovedBanner />
             <Header />
             {children}
             <Footer />

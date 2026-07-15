@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <main id="main">
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-cream-100">
+      <section className="pt-40 pb-16 bg-cream-100">
         <Container>
           <GSAPAnimateOnScroll>
             <span className="text-sm uppercase tracking-wider text-sage-500 mb-4 block">
@@ -40,9 +40,7 @@ export default function AboutPage() {
       {/* Image */}
       <section className="relative h-[30vh] sm:h-[40vh] lg:h-[50vh] bg-sage-100 overflow-hidden">
         <GSAPAnimateOnScroll className="w-full h-full">
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-sage-100 to-sage-200">
-            <span className="text-sage-400">Clinic interior image</span>
-          </div>
+          <div className="w-full h-full bg-gradient-to-br from-sage-100 to-sage-200" />
         </GSAPAnimateOnScroll>
       </section>
 

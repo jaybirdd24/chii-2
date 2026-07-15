@@ -2,7 +2,7 @@ import { siteContent } from "@/lib/content";
 import { ArrowRight, Phone } from "lucide-react";
 
 export function BookingCTA() {
-  const { contact } = siteContent;
+  const { booking, contact } = siteContent;
 
   return (
     <section
@@ -30,7 +30,7 @@ export function BookingCTA() {
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
           <a
-            href="https://cal.com/sam-yuan-chii"
+            href={booking.calUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-[15px] text-[17px] font-medium rounded-[9px] bg-cream-50 text-sage-700 hover:bg-white transition-all hover:-translate-y-0.5 active:translate-y-0"
@@ -49,7 +49,7 @@ export function BookingCTA() {
         </div>
 
         <p className="text-sm m-0" style={{ color: "#C9D4BF" }}>
-          17 Carter Street, Mount Maunganui · next to Bayfair Mall · Mon–Fri 10am–4pm
+          52 Girven Road, Mount Maunganui · Mon–Fri 10am–4pm
         </p>
       </div>
     </section>

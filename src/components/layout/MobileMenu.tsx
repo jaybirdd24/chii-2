@@ -122,7 +122,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* Primary CTAs */}
           <div className="flex flex-col gap-2 mb-4">
             <a
-              href="https://cal.com/sam-yuan-chii"
+              href={siteContent.booking.calUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}

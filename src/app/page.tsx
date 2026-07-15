@@ -42,16 +42,11 @@ function LocalBusinessJsonLd() {
     telephone: "+64275742522",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "17 Carter Street",
+      streetAddress: "52 Girven Road",
       addressLocality: "Mount Maunganui",
       addressRegion: "Bay of Plenty",
       postalCode: "3116",
       addressCountry: "NZ",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -37.6741,
-      longitude: 176.1185,
     },
     openingHoursSpecification: [
       {

@@ -191,12 +191,12 @@ git push origin main                 # Push to remote
 **Contact:**
 - Phone: +64 27 574 2522
 - Email: chiihealth768@gmail.com
-- Address: 17 Carter Street, Mount Maunganui, Tauranga 3116, New Zealand
+- Address: 52 Girven Road, Mount Maunganui, Tauranga 3116, New Zealand
 
 **Hours:**
 - Mon-Fri: 10:00 AM - 4:00 PM
 - Sat-Sun: Closed
 
-**Services:** Acupuncture, Chinese medicine, massage, physiotherapy (from Sept 2025), facials, waxing
+**Services:** Acupuncture, Chinese medicine, massage, physiotherapy, facials, waxing
 
 This information is hardcoded in JSON-LD schema on `index.html:140` and must be updated if business details change.

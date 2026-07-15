@@ -7,7 +7,6 @@ export interface PriceItem {
 
 export interface CalLink {
   label: string;
-  slug: string;
 }
 
 export interface Service {
@@ -47,8 +46,8 @@ export const services: Service[] = [
     pricingNote:
       "Herbal medicine pricing varies based on your individual formula. Ask during your consultation for details.",
     calLinks: [
-      { label: "Book cupping", slug: "sam-yuan-chii/cupping" },
-      { label: "Book cupping with acupuncture", slug: "sam-yuan-chii/cupping-with-acupuncture" },
+      { label: "Book cupping" },
+      { label: "Book cupping with acupuncture" },
     ],
   },
   {
@@ -74,8 +73,8 @@ export const services: Service[] = [
     ],
     pricingNote: "Herbal medicine, ask for details.",
     calLinks: [
-      { label: "Book appointment", slug: "sam-yuan-chii/acupuncture" },
-      { label: "Book cupping", slug: "sam-yuan-chii/cupping" },
+      { label: "Book appointment" },
+      { label: "Book cupping" },
     ],
   },
   {
@@ -101,8 +100,8 @@ export const services: Service[] = [
     pricingNote:
       "Bring your ACC claim number and ID so we can confirm cover. We can help arrange new claims when needed.",
     calLinks: [
-      { label: "Book initial appointment", slug: "sam-yuan-chii/physio-initial" },
-      { label: "Book follow-up", slug: "sam-yuan-chii/physio-follow-up" },
+      { label: "Book initial appointment" },
+      { label: "Book follow-up" },
     ],
   },
   {
@@ -129,8 +128,8 @@ export const services: Service[] = [
     ],
     pricingNote: "Oil massage, extra $10.",
     calLinks: [
-      { label: "Book massage", slug: "sam-yuan-chii/massage" },
-      { label: "Book reflexology", slug: "sam-yuan-chii/reflexology" },
+      { label: "Book massage" },
+      { label: "Book reflexology" },
     ],
   },
   {

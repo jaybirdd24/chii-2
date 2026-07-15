@@ -13,12 +13,7 @@ export function AboutPreview() {
           {/* Image */}
           <GSAPAnimateOnScroll>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-lg overflow-hidden bg-gradient-to-br from-sage-100 to-sage-200">
-                {/* Placeholder for clinic image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-sage-400 text-sm">Clinic image</span>
-                </div>
-              </div>
+              <div className="aspect-[4/5] rounded-lg overflow-hidden bg-gradient-to-br from-sage-100 to-sage-200" />
               {/* Decorative element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cream-200 rounded-lg -z-10 hidden md:block" />
             </div>

@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GSAPAnimateOnScroll } from "@/components/ui/GSAPAnimateOnScroll";
 import { GSAPStaggerGrid } from "@/components/ui/GSAPStaggerGrid";
 import { CalBookingButton } from "@/components/booking/CalBookingButton";
-import { CheckCircle, Phone } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import type { Service } from "@/lib/services";
 import { siteContent } from "@/lib/content";
 
@@ -15,7 +15,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-cream-100">
+      <section className="pt-40 pb-16 bg-cream-100">
         <Container>
           <GSAPAnimateOnScroll>
             <span className="text-sm uppercase tracking-wider text-sage-500 mb-4 block">
@@ -34,9 +34,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
       {/* Image */}
       <section className="relative h-[30vh] sm:h-[40vh] lg:h-[50vh] bg-sage-100 overflow-hidden">
         <GSAPAnimateOnScroll className="w-full h-full">
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-sage-100 to-sage-200">
-            <span className="text-sage-400">{service.title} image</span>
-          </div>
+          <div className="w-full h-full bg-gradient-to-br from-sage-100 to-sage-200" />
         </GSAPAnimateOnScroll>
       </section>
 
@@ -124,34 +122,25 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
 
             <GSAPAnimateOnScroll delay={200}>
               <div className="mt-8 text-center">
-                {service.calLinks && service.calLinks.length > 0 ? (
-                  <>
-                    <div className="flex gap-3 flex-wrap justify-center">
-                      {service.calLinks.map((link) => (
-                        <CalBookingButton key={link.slug} calLink={link.slug} size="lg">
-                          {link.label}
-                        </CalBookingButton>
-                      ))}
-                    </div>
-                    <p className="mt-3 text-text-muted text-sm">
-                      or call{" "}
-                      <a
-                        href={siteContent.contact.phoneLink}
-                        className="underline hover:text-sage-600 transition-colors"
-                      >
-                        {siteContent.contact.phone}
-                      </a>
-                    </p>
-                  </>
-                ) : (
+                <div className="flex gap-3 flex-wrap justify-center">
+                  {(service.calLinks?.length
+                    ? service.calLinks.map((link) => link.label)
+                    : [`Book ${service.title.toLowerCase()}`]
+                  ).map((label) => (
+                    <CalBookingButton key={label} size="lg">
+                      {label}
+                    </CalBookingButton>
+                  ))}
+                </div>
+                <p className="mt-3 text-text-muted text-sm">
+                  or call{" "}
                   <a
                     href={siteContent.contact.phoneLink}
-                    className="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium rounded-md bg-sage-500 text-white hover:bg-sage-600 transition-all hover:-translate-y-0.5"
+                    className="underline hover:text-sage-600 transition-colors"
                   >
-                    <Phone className="w-5 h-5" />
-                    Call to book · {siteContent.contact.phone}
+                    {siteContent.contact.phone}
                   </a>
-                )}
+                </p>
               </div>
             </GSAPAnimateOnScroll>
           </div>

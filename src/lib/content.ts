@@ -9,7 +9,7 @@ export const siteContent = {
     phoneLink: "tel:+64275742522",
     email: "chiihealth768@gmail.com",
     address: {
-      street: "17 Carter Street",
+      street: "52 Girven Road",
       suburb: "Mount Maunganui",
       city: "Tauranga",
       postcode: "3116",
@@ -20,6 +20,10 @@ export const siteContent = {
       saturday: "Saturday: Closed",
       sunday: "Sunday: Closed",
     },
+  },
+
+  booking: {
+    calUrl: "https://cal.com/sam-yuan-chii",
   },
 
   // Homepage
@@ -66,8 +70,11 @@ export const siteContent = {
   // Footer
   footer: {
     description:
-      "Next to Bayfair Mall, 17 Carter Street, Mount Maunganui. Acupuncture, massage, physiotherapy, and beauty care. Formerly Chii Health Beauty.",
+      "52 Girven Road, Mount Maunganui. Acupuncture, massage, physiotherapy, and beauty care. Formerly Chii Health Beauty.",
   },
+
+  // Site-wide moved notice
+  movedNotice: "We've moved! Visit us at our new location: 52 Girven Road, Mount Maunganui.",
 };
 
 export const navigation = [
