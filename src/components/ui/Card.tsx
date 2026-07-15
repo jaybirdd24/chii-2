@@ -62,7 +62,7 @@ export function Card({
             {Icon ? (
               <Icon className="service-icon w-12 h-12 text-sage-400 stroke-[1.5]" />
             ) : (
-              <span className="text-sage-400 text-sm">Image coming soon</span>
+              null
             )}
           </div>
         )}

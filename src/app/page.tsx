@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { AboutPreview } from "@/components/sections/AboutPreview";
-import { ContactInfo } from "@/components/sections/ContactInfo";
+import { BookingCTA } from "@/components/sections/BookingCTA";
 import { Marquee } from "@/components/ui/Marquee";
 
 export const metadata: Metadata = {
@@ -27,11 +27,7 @@ const marqueeItems = [
   "Chinese Medicine",
   "Physiotherapy",
   "Massage",
-  "Waxing",
-  "Facials",
   "Balance",
-  "Wellness",
-  "Healing",
   "Calm",
 ];
 
@@ -41,21 +37,16 @@ function LocalBusinessJsonLd() {
     "@type": "HealthAndBeautyBusiness",
     name: "Chii Wellness",
     description:
-      "Acupuncture, Chinese medicine, physiotherapy, massage, waxing, and facials. Serving Mount Maunganui for over 20 years.",
+      "Acupuncture, Chinese medicine, physiotherapy, massage, and waxing. Serving Mount Maunganui for over 20 years.",
     url: "https://chii.co.nz",
     telephone: "+64275742522",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "17 Carter Street",
+      streetAddress: "52 Girven Road",
       addressLocality: "Mount Maunganui",
       addressRegion: "Bay of Plenty",
       postalCode: "3116",
       addressCountry: "NZ",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -37.6741,
-      longitude: 176.1185,
     },
     openingHoursSpecification: [
       {
@@ -75,7 +66,6 @@ function LocalBusinessJsonLd() {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Physiotherapy" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Massage" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Waxing" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Facials" } },
       ],
     },
   };
@@ -96,7 +86,7 @@ export default function HomePage() {
       <ServicesOverview />
       <Marquee items={marqueeItems} />
       <AboutPreview />
-      <ContactInfo variant="compact" />
+      <BookingCTA />
     </main>
   );
 }

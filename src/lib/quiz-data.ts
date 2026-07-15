@@ -31,17 +31,17 @@ export const quizQuestions: QuizQuestion[] = [
       {
         id: "stress",
         label: "Stress reduction",
-        scores: { massage: 3, acupuncture: 2, facials: 2, "chinese-medicine": 2 },
+        scores: { massage: 3, acupuncture: 2, "chinese-medicine": 2 },
       },
       {
         id: "skin",
         label: "Skin improvement",
-        scores: { facials: 3, waxing: 2 },
+        scores: { waxing: 2 },
       },
       {
         id: "relax",
         label: "Deep relaxation",
-        scores: { massage: 3, facials: 2, acupuncture: 1, "chinese-medicine": 1 },
+        scores: { massage: 3, acupuncture: 1, "chinese-medicine": 1 },
       },
       {
         id: "performance",
@@ -67,7 +67,7 @@ export const quizQuestions: QuizQuestion[] = [
       {
         id: "face",
         label: "Skin or face",
-        scores: { facials: 3, waxing: 1 },
+        scores: { waxing: 3 },
       },
       {
         id: "fullbody",
@@ -98,7 +98,7 @@ export const quizQuestions: QuizQuestion[] = [
       {
         id: "beauty",
         label: "Beauty and skincare",
-        scores: { facials: 3, waxing: 2 },
+        scores: { waxing: 3 },
       },
       {
         id: "herbal",
@@ -113,7 +113,7 @@ export const quizQuestions: QuizQuestion[] = [
       {
         id: "quick",
         label: "Quick maintenance",
-        scores: { waxing: 3, facials: 1 },
+        scores: { waxing: 3 },
       },
     ],
   },
@@ -124,22 +124,22 @@ export const quizQuestions: QuizQuestion[] = [
       {
         id: "30min",
         label: "30 minutes",
-        scores: { waxing: 2, facials: 1 },
+        scores: { waxing: 2 },
       },
       {
         id: "60min",
         label: "60 minutes",
-        scores: { massage: 2, acupuncture: 2, physiotherapy: 2, facials: 2, "chinese-medicine": 2 },
+        scores: { massage: 2, acupuncture: 2, physiotherapy: 2, "chinese-medicine": 2 },
       },
       {
         id: "90min",
         label: "90+ minutes",
-        scores: { massage: 3, facials: 3 },
+        scores: { massage: 3 },
       },
       {
         id: "flexible",
         label: "Flexible",
-        scores: { massage: 1, acupuncture: 1, physiotherapy: 1, facials: 1, waxing: 1, "chinese-medicine": 1 },
+        scores: { massage: 1, acupuncture: 1, physiotherapy: 1, waxing: 1, "chinese-medicine": 1 },
       },
     ],
   },
@@ -163,14 +163,9 @@ export const quizQuestions: QuizQuestion[] = [
         scores: { massage: 2 },
       },
       {
-        id: "facial_exp",
-        label: "Facials",
-        scores: { facials: 2 },
-      },
-      {
         id: "none",
         label: "None of these",
-        scores: { massage: 1, facials: 1 },
+        scores: { massage: 1 },
       },
     ],
   },
@@ -185,7 +180,6 @@ export function calculateResults(
     physiotherapy: 0,
     massage: 0,
     waxing: 0,
-    facials: 0,
   };
 
   // Calculate scores based on answers

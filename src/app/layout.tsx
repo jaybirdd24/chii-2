@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MovedBanner } from "@/components/layout/MovedBanner";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import { ClientDecorations } from "@/components/ui/ClientDecorations";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -22,6 +22,12 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://chii.co.nz"),
   title: {
@@ -29,14 +35,13 @@ export const metadata: Metadata = {
     template: "%s | Chii Wellness",
   },
   description:
-    "Experience holistic wellness at Chii. We offer acupuncture, physiotherapy, massage, waxing, and facials in a calm, welcoming environment.",
+    "Experience holistic wellness at Chii. We offer acupuncture, physiotherapy, massage, and waxing in a calm, welcoming environment.",
   keywords: [
     "wellness clinic",
     "acupuncture",
     "physiotherapy",
     "massage",
     "waxing",
-    "facials",
     "Mount Maunganui",
     "Tauranga",
     "holistic health",
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Chii Wellness | Mount Maunganui Wellness Clinic",
     description:
-      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, waxing, and facials.",
+      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, and waxing.",
     type: "website",
     locale: "en_NZ",
     siteName: "Chii Wellness",
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chii Wellness | Mount Maunganui Wellness Clinic",
     description:
-      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, waxing, and facials.",
+      "Experience holistic wellness at Chii. Acupuncture, physiotherapy, massage, and waxing.",
   },
 };
 
@@ -69,9 +74,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
+                try {
+                  const theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (_) {
                 }
               })();
             `,
@@ -82,12 +90,11 @@ export default function RootLayout({
         className={`${cormorant.variable} ${dmSans.variable} antialiased`}
       >
         <ThemeProvider>
-          <SmoothScrollProvider>
+            <MovedBanner />
             <Header />
             {children}
             <Footer />
             <ClientDecorations />
-          </SmoothScrollProvider>
         </ThemeProvider>
         <Analytics />
       </body>

@@ -16,25 +16,22 @@ const tips: TipItem[] = [
     icon: <Car className="w-5 h-5 text-sage-600" />,
     title: "Parking",
     details: [
-      "Free street parking available on Carter Street",
-      "Bayfair Mall car park is a short walk away with plenty of spaces",
-      "No time restrictions on surrounding residential streets",
+      "Dedicated parking right outside the clinic",
+      "Free street parking also available on Girven Road",
     ],
   },
   {
     icon: <Bus className="w-5 h-5 text-sage-600" />,
     title: "Public Transport",
     details: [
-      "Bayfair bus stop is a 2-minute walk from the clinic",
-      "Routes 30, 32, and 36 all stop nearby",
-      "Tauranga bus network connects to Baypark and the CBD",
+      "Tauranga bus network connects Mount Maunganui to Baypark and the CBD",
     ],
   },
   {
     icon: <MapPin className="w-5 h-5 text-sage-600" />,
     title: "Finding the Clinic",
     details: [
-      "Located at 17 Carter Street, next to Bayfair Mall",
+      "Located at 52 Girven Road, Mount Maunganui",
       "Look for the Chii Health sign at street level",
       "Wheelchair-accessible entrance at the front",
     ],
@@ -97,7 +94,7 @@ export function FindUs() {
               Find Us
             </h2>
             <p className="text-text-secondary max-w-lg mx-auto">
-              17 Carter Street, Mount Maunganui — next to Bayfair Mall
+              52 Girven Road, Mount Maunganui
             </p>
           </div>
         </GSAPAnimateOnScroll>
@@ -107,7 +104,7 @@ export function FindUs() {
           <GSAPAnimateOnScroll className="lg:col-span-3">
             <div className="rounded-xl overflow-hidden shadow-md border border-border h-80 md:h-96 lg:h-[420px]">
               <iframe
-                src="https://www.google.com/maps?q=17+Carter+Street,+Mount+Maunganui,+New+Zealand&output=embed"
+                src="https://www.google.com/maps?q=52+Girven+Road,+Mount+Maunganui,+New+Zealand&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -128,7 +125,7 @@ export function FindUs() {
 
               {/* Directions link */}
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=17+Carter+Street,+Mount+Maunganui,+New+Zealand"
+                href="https://www.google.com/maps/dir/?api=1&destination=52+Girven+Road,+Mount+Maunganui,+New+Zealand"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center justify-center gap-2 w-full rounded-lg bg-sage-600 text-cream-50 px-6 py-3 font-medium hover:bg-sage-700 transition-colors text-center"

@@ -8,7 +8,6 @@ import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/shared/Logo";
 import { Navigation } from "./Navigation";
 import { MobileMenu } from "./MobileMenu";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,10 +46,10 @@ export function Header() {
 
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-30 transition-all duration-300",
+          "fixed top-8 left-0 right-0 z-30 transition-all duration-300 backdrop-blur-md",
           isScrolled
-            ? "bg-cream-50/95 backdrop-blur-sm shadow-sm py-3"
-            : "bg-transparent py-5"
+            ? "bg-cream-50/70 shadow-sm py-3"
+            : "bg-cream-50/30 py-5"
         )}
       >
         <Container>
@@ -63,17 +62,23 @@ export function Header() {
               <Navigation />
               <a
                 href={siteContent.contact.phoneLink}
-                className="inline-flex items-center gap-2 ml-4 px-4 py-2 text-sm font-medium rounded-md bg-sage-500 text-white hover:bg-sage-600 transition-colors btn-fill-hover relative overflow-hidden"
+                className="inline-flex items-center gap-1.5 ml-2 px-4 py-[9px] text-sm font-medium rounded-lg border border-sage-300 text-sage-700 bg-transparent hover:bg-sage-600 hover:text-white hover:border-sage-600 transition-all"
               >
-                <Phone className="w-4 h-4 relative z-10" />
-                <span className="relative z-10">Call Us</span>
+                <Phone className="w-3.5 h-3.5" />
+                {siteContent.contact.phone}
               </a>
-              <ThemeToggle />
+              <a
+                href={siteContent.booking.calUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-[18px] py-[10px] text-sm font-medium rounded-lg bg-sage-600 text-white hover:bg-sage-700 transition-all hover:-translate-y-0.5 active:translate-y-0"
+              >
+                Book Online
+              </a>
             </div>
 
-            {/* Mobile: Theme Toggle + Menu Button */}
+            {/* Mobile Menu Button */}
             <div className="flex lg:hidden items-center gap-1">
-              <ThemeToggle />
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="p-2.5 text-text-secondary hover:text-text-primary transition-colors"

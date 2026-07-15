@@ -5,6 +5,10 @@ export interface PriceItem {
   note?: string;
 }
 
+export interface CalLink {
+  label: string;
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -15,6 +19,7 @@ export interface Service {
   pricing: PriceItem[];
   pricingNote?: string;
   image?: string;
+  calLinks?: CalLink[];
 }
 
 export const services: Service[] = [
@@ -23,25 +28,27 @@ export const services: Service[] = [
     title: "Chinese Medicine",
     tagline: "Traditional healing, modern care",
     shortDescription:
-      "Over 10 years clinical experience in China. Herbal medicine, cupping, moxibustion, and gua sha.",
+      "Over 10 years clinical experience in China. Herbal medicine, cupping, and moxibustion.",
     fullDescription:
-      "Traditional Chinese Medicine (TCM) is a complete system of healthcare developed over thousands of years. At Chii Health, our practitioners bring over 10 years of clinical experience in China, offering authentic TCM treatments grounded in deep knowledge and training.\n\nTCM views the body as an interconnected system where energy (qi) flows through pathways called meridians. When this flow is disrupted, illness or discomfort can occur. Our treatments work to restore balance, support your body's natural healing processes, and address the root causes of health concerns—not just the symptoms.\n\nWe offer a range of traditional therapies including herbal medicine custom-formulated for your needs, cupping to release tension and improve circulation, moxibustion to warm and stimulate healing, and gua sha for muscle recovery and pain relief.",
+      "Traditional Chinese Medicine (TCM) is a complete system of healthcare developed over thousands of years. At Chii Health, our practitioners bring over 10 years of clinical experience in China, offering authentic TCM treatments grounded in deep knowledge and training.\n\nTCM views the body as an interconnected system where energy (qi) flows through pathways called meridians. When this flow is disrupted, illness or discomfort can occur. Our treatments work to restore balance, support your body's natural healing processes, and address the root causes of health concerns—not just the symptoms.\n\nWe offer a range of traditional therapies including herbal medicine custom-formulated for your needs, cupping to release tension and improve circulation, and moxibustion to warm and stimulate healing.",
     benefits: [
       "Herbal medicine tailored to your needs",
       "Cupping for tension and circulation",
       "Moxibustion for warming therapy",
-      "Gua sha for muscle recovery",
       "10+ years clinical experience in China",
       "Holistic approach to wellness",
     ],
     pricing: [
-      { name: "Cupping", price: "$25" },
-      { name: "Cupping", note: "with acupuncture", price: "$110" },
+      { name: "Cupping", duration: "15 min", price: "$25" },
+      { name: "Cupping", note: "with acupuncture", duration: "60 min", price: "$110" },
       { name: "Moxibustion", note: "add-on", price: "$15" },
-      { name: "Gua sha", note: "add-on", price: "$15" },
     ],
     pricingNote:
       "Herbal medicine pricing varies based on your individual formula. Ask during your consultation for details.",
+    calLinks: [
+      { label: "Book cupping" },
+      { label: "Book cupping with acupuncture" },
+    ],
   },
   {
     slug: "acupuncture",
@@ -62,16 +69,20 @@ export const services: Service[] = [
       { name: "Acupuncture", duration: "30 min", price: "$60" },
       { name: "Acupuncture", note: "ACC first visit", price: "$40" },
       { name: "Acupuncture", note: "ACC follow up", price: "$20" },
-      { name: "Cupping", price: "$25" },
+      { name: "Cupping", duration: "15 min", price: "$25" },
     ],
     pricingNote: "Herbal medicine, ask for details.",
+    calLinks: [
+      { label: "Book appointment" },
+      { label: "Book cupping" },
+    ],
   },
   {
     slug: "physiotherapy",
     title: "Physiotherapy",
     tagline: "Hands-on care with ACC support",
     shortDescription:
-      "Physiotherapy services with ACC-accredited providers. Available from September 2025.",
+      "Physiotherapy services with ACC-accredited providers.",
     fullDescription:
       "Our physiotherapy services combine evidence-based techniques with a holistic understanding of your body. We go beyond treating symptoms to identify and address the underlying causes of your pain or movement limitations.\n\nWe start with an assessment and a clear plan. Hands-on care and exercise are tailored to your goals. ACC cover is available for eligible claims. Bring your ACC claim number and ID so we can confirm cover. We can help arrange new claims when needed.",
     benefits: [
@@ -88,6 +99,10 @@ export const services: Service[] = [
     ],
     pricingNote:
       "Bring your ACC claim number and ID so we can confirm cover. We can help arrange new claims when needed.",
+    calLinks: [
+      { label: "Book initial appointment" },
+      { label: "Book follow-up" },
+    ],
   },
   {
     slug: "massage",
@@ -112,6 +127,10 @@ export const services: Service[] = [
       { name: "Reflexology", duration: "60 min", price: "$95" },
     ],
     pricingNote: "Oil massage, extra $10.",
+    calLinks: [
+      { label: "Book massage" },
+      { label: "Book reflexology" },
+    ],
   },
   {
     slug: "waxing",
@@ -142,30 +161,6 @@ export const services: Service[] = [
       { name: "Brazilian", note: "follow up", price: "$55" },
     ],
     pricingNote: "Men's waxing, extra $10.",
-  },
-  {
-    slug: "facials",
-    title: "Facials & Eye Care",
-    tagline: "Beauty services that feel calm",
-    shortDescription:
-      "Treatments to complement wellness care with gentle brow, lash, and facial options.",
-    fullDescription:
-      "Your skin deserves dedicated care, and our facial treatments deliver exactly that. Each session begins with a thorough skin analysis so we can customize your treatment to address your unique concerns—whether that's hydration, anti-aging, acne, or simply maintaining healthy skin.\n\nUsing premium skincare products and expert techniques, we cleanse, exfoliate, and nourish your skin while you drift into relaxation. Our facials are designed not just to treat your skin, but to provide a moment of peace in your busy life. Leave with skin that looks refreshed, feels soft, and glows with health.",
-    benefits: [
-      "Mini and deluxe facials",
-      "Eyebrow and eyelash tinting",
-      "Brow shaping",
-      "Blackhead removal",
-    ],
-    pricing: [
-      { name: "Mini facial", duration: "30 min", price: "$70" },
-      { name: "Deluxe facial", duration: "60 min", price: "$110" },
-      { name: "Blackhead removal", note: "add-on", price: "$50" },
-      { name: "Eyebrow tinting", price: "$20" },
-      { name: "Eyelash tinting", price: "$20" },
-      { name: "Brow shape", price: "$20" },
-      { name: "Eye combo", price: "$55" },
-    ],
   },
 ];
 

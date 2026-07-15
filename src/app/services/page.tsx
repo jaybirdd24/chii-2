@@ -9,7 +9,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Discover our range of wellness services including acupuncture, physiotherapy, massage, waxing, and facials.",
+    "Discover our range of wellness services including acupuncture, physiotherapy, massage, and waxing.",
   alternates: {
     canonical: "/services",
   },
@@ -19,7 +19,7 @@ export default function ServicesPage() {
   return (
     <main id="main">
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-cream-100">
+      <section className="pt-40 pb-16 bg-cream-100">
         <Container>
           <GSAPAnimateOnScroll>
             <span className="text-sm uppercase tracking-wider text-sage-500 mb-4 block">

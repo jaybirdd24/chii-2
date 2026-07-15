@@ -50,3 +50,4 @@ Colors defined as CSS variables in `globals.css`:
 Typography:
 - Headings: Cormorant Garamond (`font-heading` class)
 - Body: DM Sans (`font-body` class)
+    

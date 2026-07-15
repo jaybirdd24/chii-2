@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GSAPAnimateOnScroll } from "@/components/ui/GSAPAnimateOnScroll";
 import { GSAPStaggerGrid } from "@/components/ui/GSAPStaggerGrid";
@@ -7,8 +6,6 @@ import { CalBookingButton } from "@/components/booking/CalBookingButton";
 import { CheckCircle } from "lucide-react";
 import type { Service } from "@/lib/services";
 import { siteContent } from "@/lib/content";
-
-const bookingEnabled = process.env.NEXT_PUBLIC_ENABLE_BOOKING === "true";
 
 interface ServiceDetailProps {
   service: Service;
@@ -18,7 +15,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-cream-100">
+      <section className="pt-40 pb-16 bg-cream-100">
         <Container>
           <GSAPAnimateOnScroll>
             <span className="text-sm uppercase tracking-wider text-sage-500 mb-4 block">
@@ -37,9 +34,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
       {/* Image */}
       <section className="relative h-[30vh] sm:h-[40vh] lg:h-[50vh] bg-sage-100 overflow-hidden">
         <GSAPAnimateOnScroll className="w-full h-full">
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-sage-100 to-sage-200">
-            <span className="text-sage-400">{service.title} image</span>
-          </div>
+          <div className="w-full h-full bg-gradient-to-br from-sage-100 to-sage-200" />
         </GSAPAnimateOnScroll>
       </section>
 
@@ -127,44 +122,16 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
 
             <GSAPAnimateOnScroll delay={200}>
               <div className="mt-8 text-center">
-                {bookingEnabled ? (
-                  <>
-                    <CalBookingButton size="lg" />
-                    <p className="mt-3 text-text-muted text-sm">
-                      or call{" "}
-                      <a
-                        href={siteContent.contact.phoneLink}
-                        className="underline hover:text-sage-600 transition-colors"
-                      >
-                        {siteContent.contact.phone}
-                      </a>
-                    </p>
-                  </>
-                ) : (
-                  <Button href={siteContent.contact.phoneLink} size="lg">
-                    Call to Book
-                  </Button>
-                )}
-              </div>
-            </GSAPAnimateOnScroll>
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 lg:py-24 bg-cream-100 text-center">
-        <Container>
-          <GSAPAnimateOnScroll>
-            <h2 className="font-heading text-3xl md:text-4xl text-text-primary mb-6">
-              Ready to Begin?
-            </h2>
-            <p className="text-text-secondary mb-8 max-w-xl mx-auto">
-              Take the first step towards better wellness. Contact us today to
-              schedule your {service.title.toLowerCase()} appointment.
-            </p>
-            {bookingEnabled ? (
-              <>
-                <CalBookingButton size="lg" />
+                <div className="flex gap-3 flex-wrap justify-center">
+                  {(service.calLinks?.length
+                    ? service.calLinks.map((link) => link.label)
+                    : [`Book ${service.title.toLowerCase()}`]
+                  ).map((label) => (
+                    <CalBookingButton key={label} size="lg">
+                      {label}
+                    </CalBookingButton>
+                  ))}
+                </div>
                 <p className="mt-3 text-text-muted text-sm">
                   or call{" "}
                   <a
@@ -174,13 +141,9 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                     {siteContent.contact.phone}
                   </a>
                 </p>
-              </>
-            ) : (
-              <Button href="/contact" size="lg">
-                Get in Touch
-              </Button>
-            )}
-          </GSAPAnimateOnScroll>
+              </div>
+            </GSAPAnimateOnScroll>
+          </div>
         </Container>
       </section>
     </>

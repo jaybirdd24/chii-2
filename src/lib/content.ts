@@ -9,7 +9,7 @@ export const siteContent = {
     phoneLink: "tel:+64275742522",
     email: "chiihealth768@gmail.com",
     address: {
-      street: "17 Carter Street",
+      street: "52 Girven Road",
       suburb: "Mount Maunganui",
       city: "Tauranga",
       postcode: "3116",
@@ -20,6 +20,10 @@ export const siteContent = {
       saturday: "Saturday: Closed",
       sunday: "Sunday: Closed",
     },
+  },
+
+  booking: {
+    calUrl: "https://cal.com/sam-yuan-chii",
   },
 
   // Homepage
@@ -36,7 +40,7 @@ export const siteContent = {
     intro:
       "We focus on clear explanations, steady hands, and making sure you feel comfortable from the moment you arrive.",
     story:
-      "Serving Mount Maunganui for over 20 years, Chii Health Clinic offers acupuncture, Chinese herbal medicine, tui na massage, and natural therapies. From September 2025, we are adding physiotherapy services with experienced ACC-accredited providers. Our team focuses on chronic pain, sports injuries, rehabilitation, and holistic wellness.",
+      "Serving Mount Maunganui for over 20 years, Chii Health Clinic offers acupuncture, Chinese herbal medicine, tui na massage, physiotherapy, and natural therapies. Our team focuses on chronic pain, sports injuries, rehabilitation, and holistic wellness.",
     philosophy:
       "Every person is unique, and so is their path to wellness. We take time to understand your individual needs and create personalized treatment plans that address both symptoms and root causes. Our goal is not just to treat, but to empower you with the knowledge and tools to maintain lasting wellbeing.",
     values: [
@@ -66,8 +70,11 @@ export const siteContent = {
   // Footer
   footer: {
     description:
-      "Next to Bayfair Mall, 17 Carter Street, Mount Maunganui. Acupuncture, massage, physiotherapy, and beauty care. Formerly Chii Health Beauty.",
+      "52 Girven Road, Mount Maunganui. Acupuncture, massage, physiotherapy, and beauty care. Formerly Chii Health Beauty.",
   },
+
+  // Site-wide moved notice
+  movedNotice: "We've moved! Visit us at our new location: 52 Girven Road, Mount Maunganui.",
 };
 
 export const navigation = [
@@ -82,7 +89,6 @@ export const navigation = [
       { name: "Physiotherapy", href: "/services/physiotherapy" },
       { name: "Massage", href: "/services/massage" },
       { name: "Waxing", href: "/services/waxing" },
-      { name: "Facials", href: "/services/facials" },
     ],
   },
   { name: "Contact", href: "/contact" },

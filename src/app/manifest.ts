@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Chii Wellness",
     short_name: "Chii",
     description:
-      "Acupuncture, Chinese medicine, physiotherapy, massage, waxing, and facials in Mount Maunganui.",
+      "Acupuncture, Chinese medicine, physiotherapy, massage, and waxing in Mount Maunganui.",
     start_url: "/",
     display: "browser",
     background_color: "#FFF8F0",
