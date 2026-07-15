@@ -58,7 +58,7 @@ export function ContactInfo({ variant = "full" }: ContactInfoProps) {
               <div className="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-6 h-6 text-sage-600" />
               </div>
-              <h3 className="font-heading text-xl mb-2">Call Us</h3>
+              <h3 className="font-heading text-xl mb-2">Call or Text Us</h3>
               <a
                 href={contact.phoneLink}
                 className="text-sage-600 hover:text-sage-700 transition-colors text-lg font-medium"

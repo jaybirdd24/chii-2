@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { ContactInfo } from "@/components/sections/ContactInfo";
-import { ContactForm } from "@/components/sections/ContactForm";
 import { FindUs } from "@/components/sections/FindUs";
 
 export const metadata: Metadata = {
@@ -14,9 +13,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main id="main" className="pt-16">
+    <main id="main" className="pt-24">
       <ContactInfo variant="full" />
-      <ContactForm />
       <FindUs />
     </main>
   );
