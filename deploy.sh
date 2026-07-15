@@ -14,7 +14,11 @@
 #
 # First-time setup expected (see the deploy plan):
 #   - Node 20/22 LTS installed
-#   - a systemd unit named "$SERVICE" running `npm start` on $PORT
+#   - next.config.ts has output: "standalone"
+#   - a systemd unit named "$SERVICE" running the standalone server:
+#       ExecStart=/usr/bin/node server.js
+#       WorkingDirectory=<repo>/.next/standalone
+#       Environment=NODE_ENV=production PORT=3000 HOSTNAME=127.0.0.1
 #   - this repo cloned at the location of this script
 
 set -euo pipefail
@@ -56,11 +60,21 @@ else
 fi
 
 # ---- 3. Build (before touching the running service) -----------------------
-log "Building production bundle ..."
+log "Building production bundle (standalone) ..."
 # If the 4GB Pi ever OOMs during build, uncomment the next line:
 # export NODE_OPTIONS="--max-old-space-size=2048"
 npm run build
 log "Build succeeded."
+
+# ---- 3b. Stage static assets into the standalone bundle -------------------
+# `output: "standalone"` produces .next/standalone/server.js but does NOT
+# copy static assets — the server 404s CSS/JS/images without this step.
+[[ -d .next/standalone ]] || die "No .next/standalone — is output:\"standalone\" set in next.config.ts?"
+log "Copying static assets into the standalone bundle ..."
+cp -r .next/static ".next/standalone/.next/static"
+if [[ -d public ]]; then
+  cp -r public ".next/standalone/public"
+fi
 
 # ---- 4. Restart + health check --------------------------------------------
 log "Restarting service '$SERVICE' ..."
