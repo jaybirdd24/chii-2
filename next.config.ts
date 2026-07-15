@@ -42,6 +42,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   allowedDevOrigins: ["192.168.1.73", "192.168.1.85"],
   async headers() {
     if (!isProduction) {
