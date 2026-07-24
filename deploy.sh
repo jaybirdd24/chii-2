@@ -25,7 +25,7 @@ set -euo pipefail
 
 # ---- Config (override via env) --------------------------------------------
 BRANCH="${BRANCH:-main}"          # git branch to deploy
-SERVICE="${SERVICE:-chii2}"       # systemd service name
+SERVICE="${SERVICE:-chii}"        # systemd service name
 PORT="${PORT:-3000}"              # port the app listens on
 # ---------------------------------------------------------------------------
 

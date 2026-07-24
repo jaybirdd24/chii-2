@@ -5,8 +5,10 @@ export const siteContent = {
 
   // Contact
   contact: {
-    phone: "027 574 2522",
-    phoneLink: "tel:+64275742522",
+    phone: "07 574 2522",
+    phoneLink: "tel:+6475742522",
+    textPhone: "027 574 2522",
+    textLink: "sms:+64275742522",
     email: "chiihealth768@gmail.com",
     address: {
       street: "52 Girven Road",
