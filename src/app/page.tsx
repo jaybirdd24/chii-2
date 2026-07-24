@@ -39,7 +39,7 @@ function LocalBusinessJsonLd() {
     description:
       "Acupuncture, Chinese medicine, physiotherapy, massage, and waxing. Serving Mount Maunganui for over 20 years.",
     url: "https://chii.co.nz",
-    telephone: "+64275742522",
+    telephone: "+6475742522",
     address: {
       "@type": "PostalAddress",
       streetAddress: "52 Girven Road",

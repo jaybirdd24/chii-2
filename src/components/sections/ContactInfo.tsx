@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { GSAPAnimateOnScroll } from "@/components/ui/GSAPAnimateOnScroll";
 import { GSAPStaggerGrid } from "@/components/ui/GSAPStaggerGrid";
 import { siteContent } from "@/lib/content";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MessageSquare, MapPin, Clock } from "lucide-react";
 import Link from "next/link";
 
 interface ContactInfoProps {
@@ -20,13 +20,22 @@ export function ContactInfo({ variant = "full" }: ContactInfoProps) {
             <h2 className="font-heading text-2xl md:text-3xl mb-4">
               Get in Touch
             </h2>
-            <a
-              href={contact.phoneLink}
-              className="inline-flex items-center gap-2 text-xl md:text-2xl hover:text-white transition-colors"
-            >
-              <Phone className="w-6 h-6" />
-              {contact.phone}
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+              <a
+                href={contact.phoneLink}
+                className="inline-flex items-center gap-2 text-xl md:text-2xl hover:text-white transition-colors"
+              >
+                <Phone className="w-6 h-6" />
+                {contact.phone}
+              </a>
+              <a
+                href={contact.textLink}
+                className="inline-flex items-center gap-2 text-xl md:text-2xl hover:text-white transition-colors"
+              >
+                <MessageSquare className="w-6 h-6" />
+                {contact.textPhone}
+              </a>
+            </div>
           </div>
         </Container>
       </section>
@@ -59,12 +68,20 @@ export function ContactInfo({ variant = "full" }: ContactInfoProps) {
                 <Phone className="w-6 h-6 text-sage-600" />
               </div>
               <h3 className="font-heading text-xl mb-2">Call or Text Us</h3>
-              <a
-                href={contact.phoneLink}
-                className="text-sage-600 hover:text-sage-700 transition-colors text-lg font-medium"
-              >
-                {contact.phone}
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href={contact.phoneLink}
+                  className="text-sage-600 hover:text-sage-700 transition-colors text-lg font-medium"
+                >
+                  Call: {contact.phone}
+                </a>
+                <a
+                  href={contact.textLink}
+                  className="text-sage-600 hover:text-sage-700 transition-colors text-lg font-medium"
+                >
+                  Text: {contact.textPhone}
+                </a>
+              </div>
             </div>
 
             {/* Address */}
